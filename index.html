@@ -24,13 +24,18 @@
         // env = {'envelope': JSON.parse(atob(env)).envelope};
         // env = JSON.stringify(env);
         let env = decodeURIComponent(document.cookie.match('(^|;) *_lr_env=([^;]*)')[2]);
+
+        let decoded = JSON.parse(atob(env))
         console.log(1);
         const button = document.querySelector(".submit-button");
         button.addEventListener("click", ()=>{
             const p = document.createElement("p");
+            const pdecoded = document.createElement("p");
             const div = document.querySelector(".form-handler");
             p.innerHTML = env;
+            pdecoded.innerHTML = decoded;
             div.append(p);
+            div.append(pdecoded);
         },false);
        </script>
 </html>
