@@ -25,7 +25,7 @@
         // env = JSON.stringify(env);
         let env = decodeURIComponent(document.cookie.match('(^|;) *_lr_env=([^;]*)')[2]);
 
-        let decoded = JSON.parse(atob(env))
+        let decoded = JSON.parse(atob(env)).envelope
         console.log(1);
         const button = document.querySelector(".submit-button");
         button.addEventListener("click", ()=>{
