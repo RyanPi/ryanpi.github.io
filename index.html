@@ -20,16 +20,9 @@
 
 
         let env = undefined;
-
-        try {
-            env = decodeURIComponent(document.cookie.match('(^|;) *_lr_env=([^;]*)')[2]);
-            env = {'envelope': JSON.parse(atob(env)).envelope};
-            env = JSON.stringify(env);
-        } catch (e) {
-            console.log(e);
-            console.log(`the error is ${e}`)
-        };
-
+        env = decodeURIComponent(document.cookie.match('(^|;) *_lr_env=([^;]*)')[2]);
+        env = {'envelope': JSON.parse(atob(env)).envelope};
+        env = JSON.stringify(env);
 
         console.log(1);
         const button = document.querySelector(".submit-button");
