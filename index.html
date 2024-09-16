@@ -17,18 +17,11 @@
 
 </body>
        <script>
-
-
-        // let env = undefined;
-        // env = decodeURIComponent(document.cookie.match('(^|;) *_lr_env=([^;]*)')[2]);
-        // env = {'envelope': JSON.parse(atob(env)).envelope};
-        // env = JSON.stringify(env);
-        let env = decodeURIComponent(document.cookie.match('(^|;) *_lr_env=([^;]*)')[2]);
-
-        let decoded = JSON.parse(atob(env)).envelope
         console.log(1);
         const button = document.querySelector(".submit-button");
         button.addEventListener("click", ()=>{
+            let env = decodeURIComponent(document.cookie.match('(^|;) *_lr_env=([^;]*)')[2]);
+            let decoded = JSON.parse(atob(env)).envelope
             const p = document.createElement("p");
             const pdecoded = document.createElement("p");
             const div = document.querySelector(".form-handler");
