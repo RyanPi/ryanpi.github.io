@@ -15,18 +15,39 @@
             <button class="submit-button" type="submit">Generate Envelope</button>
         </div>
 
+</body>
        <script>
+
+
+        function retrieveEnvelope(callback){
+        let env = undefined;
+        try {
+            env =
+        decodeURIComponent(document.cookie.match('(^|;) *_lr_env=([^;]*)')[2]);
+            env = {
+                'envelope': JSON.parse(atob(env)).envelope
+            };
+        env = JSON.stringify(env);
+        } catch (e) {
+            console.log(e);
+        } finally {
+            if(callback){
+            callback(env);
+            } else {
+            return env;
+            }
+        }
+    };
+        window['ats'] = {};
+        window.ats.retrieveEnvelope = retrieveEnvelope;
+
         console.log(1);
         const button = document.querySelector(".submit-button");
         button.addEventListener("click", ()=>{
-            console.log(2);
-            //get cookie value from cookies
             const p = document.createElement("p");
             const div = document.querySelector(".form-handler");
-            p.innerHTML = "some place holder for the cookie";
+            p.innerHTML = env;
             div.append(p);
         },false);
        </script>
-
-</body>
 </html>
