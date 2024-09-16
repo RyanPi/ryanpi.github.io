@@ -1,1 +1,29 @@
-Hello World
+<html>
+<html>
+<head>
+    <title>Authentication Page</title>
+    
+</head>
+<body>
+    <h1> ATS4M Authentication Page</h1>
+    <p>Enter your email below to generate an ATS envelope   
+        <div class="form-handler">
+            <input type="email" id="email" name="youremail" placeholder="youremail@here.com" size="30" required />
+            <button class="submit-button" type="submit">Generate Envelope</button>
+        </div>
+
+       <script>
+        console.log(1);
+        const button = document.querySelector(".submit-button");
+        button.addEventListener("click", ()=>{
+            console.log(2);
+            //get cookie value from cookies
+            const p = document.createElement("p");
+            const div = document.querySelector(".form-handler");
+            p.innerHTML = "some place holder for the cookie";
+            div.append(p);
+        },false);
+       </script>
+
+</body>
+</html>
