@@ -1,3 +1,7 @@
+function returnValue(envObject){
+  return envObject.envelope;
+}
+
 function retrieveEnvelope(callback) {
     let env = undefined;
     try {
