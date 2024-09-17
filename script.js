@@ -25,9 +25,9 @@ button.addEventListener("click", ()=>{
     const decodedp = document.createElement("p");
     const div = document.querySelector(".form-handler");
     env = retrieveEnvelope()
-    decoded = JSON.parse(atob(env)).envelope
+    let decoded = JSON.parse(atob(env)).envelope
     p.innerHTML = env;
-    decodedp.innerHTML = decodedp;
+    decodedp.innerHTML = decoded;
     div.append(p);
     div.append(decodedp);
 },false);
