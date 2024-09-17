@@ -4,6 +4,7 @@
     <title>Authentication Page</title>
     <link rel="preload" href="https://launchpad.privacymanager.io/latest/launchpad.bundle.js" as="script" />
 <script async defer src="https://launchpad-wrapper.privacymanager.io/468c625f-81c2-4890-a12f-80243edd96c9/launchpad-liveramp.js"></script>
+<script async defer src="script.js"></script>
     
 </head>
 <body>
@@ -16,19 +17,4 @@
         </div>
 
 </body>
-       <script>
-        console.log(1);
-        const button = document.querySelector(".submit-button");
-        button.addEventListener("click", ()=>{
-            let env = decodeURIComponent(document.cookie.match('(^|;) *_lr_env=([^;]*)')[2]);
-            let decoded = JSON.parse(atob(env)).envelope
-            const p = document.createElement("p");
-            const pdecoded = document.createElement("p");
-            const div = document.querySelector(".form-handler");
-            p.innerHTML = env;
-            pdecoded.innerHTML = decoded;
-            div.append(p);
-            div.append(pdecoded);
-        },false);
-       </script>
 </html>
