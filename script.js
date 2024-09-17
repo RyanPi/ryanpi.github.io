@@ -1,5 +1,6 @@
 function returnValue(envObject){
   return envObject.envelope;
+  console.log(1);
 }
 
 function retrieveEnvelope(callback) {
