@@ -1,3 +1,4 @@
+
 function retrieveEnvelope(callback) {
     let env = undefined;
     try {
@@ -20,10 +21,13 @@ function retrieveEnvelope(callback) {
 
 const button = document.querySelector(".submit-button");
 button.addEventListener("click", ()=>{
-    console.log("hello");
     const p = document.createElement("p");
+    const decodedp = document.createElement("p");
     const div = document.querySelector(".form-handler");
     env = retrieveEnvelope()
+    decoded = JSON.parse(atob(env)).envelope
     p.innerHTML = env;
+    decodedp.innerHTML = decodedp;
     div.append(p);
+    div.append(decodedp);
 },false);
