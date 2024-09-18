@@ -15,6 +15,11 @@
   //Get Envelope Value
   function getEnvelopeToPage(){
     env = decodeURIComponent(document.cookie.match('(^|;) *_lr_env=([^;]*)')[2]);
+    env_object = {'envelope': JSON.parse(atob(env)).envelope};
+    console.log(`this is env_object value:${env_object}`);
+    string_env = JSON.stringify(env);
+    console.log(`this is env_object value:${string_env}`);
+
     const p = document.querySelector(".envelope");
     const div = document.querySelector(".form-handler");
     if(p.innerHTML===""){
