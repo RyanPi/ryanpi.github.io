@@ -16,10 +16,14 @@
   function getEnvelopeToPage(){
     env = decodeURIComponent(document.cookie.match('(^|;) *_lr_env=([^;]*)')[2]);
     const p = document.createElement("p");
-    p.innerHTML = "";
     const div = document.querySelector(".form-handler");
-    p.innerHTML = env;
-    div.append(p)
+    if(p.innerHTML===""){
+      p.innerHTML = env;
+      div.append(p)
+      append element;  
+    } else{
+      p.innerHTML = env
+    }
   }
 
 const button = document.querySelector(".submit-button");
