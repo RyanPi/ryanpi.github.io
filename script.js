@@ -1,18 +1,3 @@
-
-// function retrieveEnvelope(){
-//     let env = undefined;
-//     try {
-//       env = decodeURIComponent(document.cookie.match('(^|;) *_lr_env=([^;]*)')[2]);
-//       // env = {'envelope': JSON.parse(atob(env)).envelope};
-//       // env = JSON.stringify(env);
-//     } catch (e) {
-//       console.log(e);
-//     } finally {
-//         return env;
-//     }
-//   }
-
-
   //Get Envelope Value
   function getEnvelopeToPage(){
     env = decodeURIComponent(document.cookie.match('(^|;) *_lr_env=([^;]*)')[2]);
@@ -25,12 +10,12 @@
     const pd = document.querySelector(".decoded-envelope");
     const div = document.querySelector(".form-handler");
     if(pe.innerHTML===""){
-      pe.innerHTML = env;
-      pd.innerHTML = env_object.envelope;
+      pe.innerHTML = `Encoded envelope: ${env}`;
+      pd.innerHTML = `Decoded envelope: ${env_object.envelope}`;
 
     } else {
-      pe.innerHTML = env;
-      pd.innerHTML = env_object.envelope;
+      pe.innerHTML = `Encoded envelope: ${env}`;
+      pd.innerHTML = `Decoded envelope: ${env_object.envelope}`;
     }
   }
 
