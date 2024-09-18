@@ -19,10 +19,9 @@
     const div = document.querySelector(".form-handler");
     if(p.innerHTML===""){
       p.innerHTML = env;
-      div.append(p)
-      append element;  
-    } else{
-      p.innerHTML = env
+      div.append(p);
+    } else {
+      p.innerHTML = env;
     }
   }
 
