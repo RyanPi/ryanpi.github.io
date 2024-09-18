@@ -1,3 +1,4 @@
+
 function retrieveEnvelope(){
     let env = undefined;
     try {
@@ -15,11 +16,12 @@ function retrieveEnvelope(){
 
 const button = document.querySelector(".submit-button");
 button.addEventListener("click", ()=>{
-    console.log(1);
-    const env = setTimeout(retrieveEnvelope, 2000);
-    console.log(2);
     const p = document.createElement("p");
     const div = document.querySelector(".form-handler");
+
+    setTimeout(retrieveEnvelope, 3000);
+
+ 
     p.innerHTML = env;
     div.append(p);
 },false);
