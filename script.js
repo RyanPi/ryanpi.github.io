@@ -25,4 +25,4 @@
 
 
 const button = document.querySelector(".submit-button");
-button.addEventListener("click", ()=>{setTimeout(getEnvelopeToPage,3000)},false);
+button.addEventListener("click", ()=>{setTimeout(getEnvelopeToPage,1500)},false);
