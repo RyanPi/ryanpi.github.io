@@ -15,11 +15,10 @@
   //Get Envelope Value
   function getEnvelopeToPage(){
     env = decodeURIComponent(document.cookie.match('(^|;) *_lr_env=([^;]*)')[2]);
-    const p = document.createElement("p");
+    const p = document.querySelector(".envelope");
     const div = document.querySelector(".form-handler");
     if(p.innerHTML===""){
       p.innerHTML = env;
-      div.append(p);
     } else {
       p.innerHTML = env;
     }
