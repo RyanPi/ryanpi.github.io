@@ -1,14 +1,16 @@
   //Get Envelope Value
   function getEnvelopeToPage(){
+    //get encoded envelope value
     env = decodeURIComponent(document.cookie.match('(^|;) *_lr_env=([^;]*)')[2]);
+    //get decoded envelope object
     env_object = {'envelope': JSON.parse(atob(env)).envelope};
-    console.log(`this is env_object value:${env_object.envelope}`);
-    // string_env = JSON.stringify(env_object);
-    // console.log(`this is env_object value:${string_env}`);
 
+    //set up UI variables
     const pe = document.querySelector(".encoded-envelope");
     const pd = document.querySelector(".decoded-envelope");
     const div = document.querySelector(".form-handler");
+
+    //logic for returning envelope values
     if(pe.innerHTML===""){
       pe.innerHTML = `Encoded envelope: ${env}`;
       pd.innerHTML = `Decoded envelope: ${env_object.envelope}`;
