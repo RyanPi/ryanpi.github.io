@@ -17,7 +17,7 @@
     env = decodeURIComponent(document.cookie.match('(^|;) *_lr_env=([^;]*)')[2]);
     env_object = {'envelope': JSON.parse(atob(env)).envelope};
     console.log(`this is env_object value:${env_object}`);
-    string_env = JSON.stringify(env);
+    string_env = JSON.stringify(env_object);
     console.log(`this is env_object value:${string_env}`);
 
     const p = document.querySelector(".envelope");
