@@ -21,5 +21,20 @@
     }
   }
 
+
+  function deleteEnvelope(){
+    ats.invalidateEnvelope();
+    console.log("envelope deleted.")
+
+    const pe = document.querySelector(".encoded-envelope");
+    const pd = document.querySelector(".decoded-envelope");
+
+    pe.innerHTML="";
+    pd.innerHTML="";
+  }
+
 const button = document.querySelector(".submit-button");
 button.addEventListener("click", ()=>{setTimeout(getEnvelopeToPage,1000)},false);
+
+const invButton = document.querySelector(".invalidate-button");
+invButton.addEventListener("click", deleteEnvelope, false);
