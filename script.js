@@ -1,9 +1,13 @@
   //Get Envelope Value
   function getEnvelopeToPage(){
     //get encoded envelope value
-    env = decodeURIComponent(document.cookie.match('(^|;) *_lr_env=([^;]*)')[2]);
+    //env = decodeURIComponent(document.cookie.match('(^|;) *_lr_env=([^;]*)')[2]);
     //get decoded envelope object
-    env_object = {'envelope': JSON.parse(atob(env)).envelope};
+    // const envelopeMaker() =>{
+    //   env_object = {'envelope': JSON.parse(atob(env)).envelope};
+    // }
+
+    env = ats.retrieveEnvelope();
 
     //set up UI variables
     const pe = document.querySelector(".encoded-envelope");
