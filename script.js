@@ -1,41 +1,36 @@
-  //Get Envelope Value
-  function getEnvelopeToPage(){
-    //get encoded envelope value
-    //env = decodeURIComponent(document.cookie.match('(^|;) *_lr_env=([^;]*)')[2]);
-    //get decoded envelope object
-    // const envelopeMaker() =>{
-    //   env_object = {'envelope': JSON.parse(atob(env)).envelope};
-    // }
+//Get Envelope Value
+function getEnvelopeToPage(){
+  //get encoded envelope value
+  env = decodeURIComponent(document.cookie.match('(^|;) *_lr_env=([^;]*)')[2]);
+  //get decoded envelope object
+  env_object = {'envelope': JSON.parse(atob(env)).envelope};
 
-    env = ats.retrieveEnvelope();
+  //set up UI variables
+  const pe = document.querySelector(".encoded-envelope");
+  const pd = document.querySelector(".decoded-envelope");
+  const div = document.querySelector(".form-handler");
 
-    //set up UI variables
-    const pe = document.querySelector(".encoded-envelope");
-    const pd = document.querySelector(".decoded-envelope");
-    const div = document.querySelector(".form-handler");
+  //logic for returning envelope values
+  if(pe.innerHTML===""){
+    pe.innerHTML = `Encoded envelope: ${env}`;
+    pd.innerHTML = `Decoded envelope: ${env_object.envelope}`;
 
-    //logic for returning envelope values
-    if(pe.innerHTML===""){
-      pe.innerHTML = `Encoded envelope: ${env}`;
-      pd.innerHTML = `Decoded envelope: ${env_object.envelope}`;
-
-    } else {
-      pe.innerHTML = `Encoded envelope: ${env}`;
-      pd.innerHTML = `Decoded envelope: ${env_object.envelope}`;
-    }
+  } else {
+    pe.innerHTML = `Encoded envelope: ${env}`;
+    pd.innerHTML = `Decoded envelope: ${env_object.envelope}`;
   }
+}
 
+function deleteEnvelope(){
+  ats.invalidateEnvelope();
+  console.log("envelope deleted.")
 
-  function deleteEnvelope(){
-    ats.invalidateEnvelope();
-    console.log("envelope deleted.")
+  const pe = document.querySelector(".encoded-envelope");
+  const pd = document.querySelector(".decoded-envelope");
 
-    const pe = document.querySelector(".encoded-envelope");
-    const pd = document.querySelector(".decoded-envelope");
-
-    pe.innerHTML="";
-    pd.innerHTML="";
-  }
+  pe.innerHTML="";
+  pd.innerHTML="";
+}
 
 const button = document.querySelector(".submit-button");
 button.addEventListener("click", ()=>{setTimeout(getEnvelopeToPage,1000)},false);
